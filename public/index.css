@@ -1,0 +1,253 @@
+@import url(" https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  /* overflow-x: hidden; */
+}
+
+.navbar-toggler-icon {
+  background-color: rgba(15, 182, 224, 0.7);
+  width: 45px; /* Tăng chiều rộng */
+  height: 30px; /* Tăng chiều cao */
+}
+
+.social li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.caption {
+  z-index: 1;
+  position: absolute;
+  top: 40%; /* Giảm giá trị này để đưa ô lên cao hơn */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.social li a {
+  color: #333; /* Màu mặc định */
+  font-size: 24px; /* Kích thước icon */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu */
+}
+
+.social li a:hover {
+  color: #007bff; /* Màu khi hover, bạn có thể thay đổi theo ý thích */
+}
+
+.social li a .fa-facebook {
+  color: #3b5998; /* Màu Facebook */
+}
+
+.social li a .fa-twitter {
+  color: #1da1f2; /* Màu Twitter */
+}
+
+.social li a .fa-youtube {
+  color: #ff0000; /* Màu YouTube */
+}
+
+.social li a .fa-github {
+  color: #333; /* Màu GitHub */
+}
+
+.social li a .fa-instagram {
+  color: #e4405f; /* Màu Instagram */
+}
+
+/* clock */
+#clock {
+  width: 100%;
+  font-size: 2vw;
+  color: rgb(9, 9, 9);
+  margin-top: 30px;
+}
+
+/* navbar */
+.navbar {
+  overflow-x: hidden;
+}
+.navbar-brand img {
+  height: 2rem;
+  /* width: 60px; */
+}
+.navbar-dark {
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.navbar .nav-item {
+  padding-right: 0.9rem;
+}
+/* .navbar .nav-link{
+    color: white !important;
+
+} */
+.navbar .nav-text {
+  color: black !important;
+  padding-left: 0.9rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #3599e6 !important;
+}
+/* .custom-background {
+    background-color:  background-color: rebeccapurple;
+} */
+
+.caption {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+}
+.btn {
+  color: #e9e9f0;
+  background-color: rgb(25, 146, 211);
+  padding: 5px;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.about i {
+  color: #0026ff;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+}
+.portfolio-item {
+  overflow: hidden;
+}
+/* portfolio */
+.portfolio-item img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.offset::before {
+  content: "";
+  height: 3.875rem;
+  margin-top: -3.875rem;
+  display: block;
+}
+
+/* landing section */
+/* .landing{
+    height: 100vh;
+} */
+/* landing content */
+/* .home-inner{
+    background-image: url(./img/landing.jpg);
+    position: fixed;
+} */
+/* fixed landing  */
+.landing {
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+  display: table;
+  z-index: -1;
+}
+.home-wrap {
+  position: absolute;
+  clip: rect(0, auto, auto, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-inner {
+  display: table;
+  position: fixed;
+
+  background-image: url(./img/AI1.webp);
+
+  background-size: cover;
+  background-position: center center;
+  transform: translateZ(0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.footer {
+  background: #f1f2f4;
+}
+.footer img {
+  height: 7rem;
+}
+.footer a {
+  text-decoration: none;
+  color: rgba(12, 12, 12, 0.133);
+}
+.social {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 11.8rem;
+}
+.social li {
+  margin: 0 auto;
+  padding-right: 1.2rem;
+  /* display: inline; */
+}
+.social .a:hover {
+  color: #00b3ff;
+}
+
+.socket {
+  border-top: solid 0.2rem #0b0b0b;
+}
+
+/*  */
+
+@media (max-width: 767.98px) {
+}
+
+.a i {
+  margin-bottom: 20px;
+  font-size: 80px;
+  color: rgb(76, 157, 219);
+}
+
+.a1 i {
+  margin-bottom: 20px;
+  font-size: 200px;
+  color: rgb(212, 13, 13);
+}
+
+.a2 i {
+  margin-bottom: 20px;
+  font-size: 200px;
+  color: rgb(8, 198, 49);
+}
+.lead1 {
+  font-size: 50px;
+  color: rgb(11, 108, 244);
+}
+/* .textBackground a{
+    height: 100px;
+            width:  100px;
+            background: green;
+            border-radius: 50px;
+} */

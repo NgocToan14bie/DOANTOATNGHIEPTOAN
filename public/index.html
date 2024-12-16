@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồ án tốt nghiệp - Trần Ngọc Toàn</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="shortcut icon" href="./img/qnu.ico">
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body data-spy="scroll" data-target="#navResponsive" onload="realtimeClock()">
+    <!-- Start Home-->
+    <div id="home">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-white bg-white navbar-expand-md fixed-top">
+            <a href="#home" class="navbar-brand"><img src="./img/home.webp" alt=""></a>
+            <button class="navbar-toggler" type="button" data-target="#navResponsive" data-toggle="collapse">
+                <i class="fas fa-bars"></i>
+                <!-- <span class="navbar-toggler-icon"></span> -->
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navResponsive">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-text"><b>Đại Học Quy Nhơn</b></li>
+                    <li class="nav-text"><b>Kỹ thuật Điện tử - viễn thông</b></li>
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#home" class="nav-link text-dark"><b>Trang chủ</b></a></li>
+                    <li class="nav-item"><a href="#hack1" class="nav-link text-dark"><b>Thông tin</b></a></li>
+                    <li class="nav-item"><a href="#hack2" class="nav-link text-dark"><b>Biểu đồ</b></a></li>
+                    <li class="nav-item"><a href="#testimonial" class="nav-link text-dark"><b>Chi tiết</b></a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link text-dark"><b>Cá nhân</b></a></li>
+                    <!-- <li class="nav-item"><a href="#about" class="nav-link">system</a></li> -->
+
+                </ul>
+            </div>
+        </nav>
+        <!-- End navigation -->
+
+        <!-- star landing img -->
+        <div class="landing">
+            <div class="home-wrap">
+                <div class="home-inner"></div>
+            </div>
+        </div>
+        <!-- end landing img -->
+
+        <!-- star landing content -->
+        <div class="col-12 caption" style="color: rgb(241, 240, 241); background-color: rgba(255, 255, 255, 0.7);">
+            <h1 class="text-uppercase text-dark pb-3 pb-md-4 custom-background"><b>ĐỒ ÁN TỐT NGHIỆP</b></h1>
+            <h1 class="text-uppercase text-dark "><b>Hệ thống giám sát chất lượng không khí ứng dụng cho nhà thông
+                    minh</b>
+            </h1>
+            <a href="#start1" class="btn btn-info"><b>Start</b></a>
+        </div>
+        <!-- end landing content -->
+
+        <div id="hack1" class="offset">
+            <div class="jumbotron text-center offset" id="start1">
+
+                <h2 class="heading">Thông tin hệ thống</h2>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-6 col-lg-3 pb-4 pb-lg-2">
+                        <!-- <i class="fas fa-desktop fa-3x"></i> -->
+                        <i class="fa-solid fa-house-user fa-3x"></i>
+                        <h5 class="text-uppercase pt-3 pb-3">Thông tin chủ nhà</h5>
+                        <h5>Tên: Trần Ngọc Toàn</h5>
+                        <h5>Giới tính : Nam</h5>
+                        <h5>Tuổi : 23</h5>
+                        <h5>ĐC: Q. Thanh Xuân-TP. Hà Nội</h5>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 pb-4 pb-lg-2">
+                        <!-- <i class="fas fa-desktop fa-3x"></i> -->
+                        <i class="fa-solid fa-clock fa-3x"></i>
+                        <p class="lead">Ngày giờ</p>
+                        <p class="lead1" id="Time"></p>
+                        <p class="lead1" id="Calendar"></p>
+
+                    </div>
+
+
+                    <div class="col-md-4 parameter1-item overflow-hidden">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <i class="fa-solid fa-heart fa-3x"></i>
+                                <p class="lead">CHỈ SỐ CHẤT LƯỢNG KHÔNG KHÍ AQI</p>
+                                <p class="lead1" id="AQI"></p>
+                                <p class="lead1" id="AQIStatus"></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="parameter1" class="offset">
+                    <div class="container-fluid text-center py-5 mx-0">
+                        <!-- <h2 class="heading">Thông số 1</h2> -->
+                        <div class="row pt-4">
+                            <div class="col-md-4 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nhiệt độ</p>
+                                        <p class="lead1" id="temperature"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-temperature-high"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Độ ẩm không khí</p>
+                                        <p class="lead1" id="humidity"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-droplet"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nồng độ bụi mịn PM 2.5</p>
+                                        <p class="lead1" id="ugPM25"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-smog"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <h2 class="heading">Thông số </h2> -->
+                        <div class="row pt-4">
+                            <div class="col-md-4 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nồng độ khí SO2</p>
+                                        <p class="lead1" id="ugSO2"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nồng độ khí CO2</p>
+                                        <p class="lead1" id="ugCO2"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-cloud"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nồng độ khí NO2</p>
+                                        <p class="lead1" id="ugNO2"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-cloud-meatball"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <h2 class="heading">Thông số </h2> -->
+                        <div class="row pt-4">
+                            <div class="col-md-4 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Nồng độ khí O3</p>
+                                        <p class="lead1" id="ugO3"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-cloud-sun"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Trạng thái hệ thống 1 (AIR)</p>
+                                        <p class="lead1" id="Status Air"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-0 parameter1-item overflow-hidden">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead">Trạng thái hệ thống 2 (DUST)</p>
+                                        <p class="lead1" id="Status Dust"></p>
+                                    </div>
+
+                                    <div class="col-md-6 a">
+                                        <i class="fa-solid fa-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="hack2" class="offset">
+                            <h2 class="heading">Biểu đồ hệ thống</h2>
+                            <!--temperature chart -->
+                            <div class="row pt-2">
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="temperatureChart"></canvas>
+                                </div>
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="humidityChart"></canvas>
+                                </div>
+
+                            </div>
+                            <!-- humid -->
+                            <!-- PM2.5 -->
+                            <div class="row pt-2">
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="ugPM25Chart"></canvas>
+                                </div>
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="ugSO2Chart"></canvas>
+                                </div>
+
+                            </div>
+                            <!-- so2 -->
+
+
+                            <!-- co2 -->
+                            <div class="row pt-2">
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="ugCO2Chart"></canvas>
+                                </div>
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="ugNO2Chart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- no2 -->
+                            <div class="row pt-2">
+
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="ugO3Chart"></canvas>
+                                </div>
+                                <div class="col-md-6 parameter1-item overflow-hidden">
+                                    <canvas id="AQIChart"></canvas>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="testimonial" class="offset">
+                    <div class="jumbotron text-center pd-5 mb-0">
+                        <h2 class="heading">Chi tiết hệ thống</h2>
+
+                        <div class="row justify-content-center">
+                            <div class="col-11 col-md-10">
+                                <div class="row pt-3">
+
+                                    <div class="col-md-6 pd-5">
+                                        <div class="cart rounded-0 mx-lg-4 mx-lg-5">
+                                            <img src="./img/schematic3d.jpg" alt="" class="card-img-top rounded-0">
+                                            <div class="card-body">
+                                                <h4>Mô hình 3D</h4>
+                                                <p class="lead border-top pt-3">
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pd-5">
+                                        <div class="cart rounded-0 mx-lg-4 mx-lg-5">
+                                            <img src="./img/schematicreal1.jpg" alt="" class="card-img-top rounded-0">
+                                            <div class="card-body">
+                                                <h4>Mô hình trên thực tế</h4>
+                                                <p class="lead border-top pt-3">
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="contact" class="offset">
+                    <div class="container-fluid footer">
+                        <div class="row pt-4 justify-content-center">
+                            <div class="col-sm-11 col-md-9 col-lg-6 text-dark text-center font-semibold">
+                                <img src="./img/avt.jpg" alt="">
+                                <p class="lead pt-4 font-semibold">Trần Ngọc Toàn</p>
+                                <p>Điện tử viễn thông K43</p>
+                                <p>ngoctoan142002@gmail.com</p>
+                                <p> Khoa Kỹ Thuật và Công Nghệ</p>
+                                <p>Trường Đại học Quy Nhơn</p>
+
+                                <ul class="social pt-3 text-dark">
+                                    <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="socket w-100 mt-5">
+                        <p class="pb-2 text-dark text-center ">
+                            &copy; <a href="" target="_blank" class="text-dark font-semibold">Trần Ngọc Toàn<main>
+                                </main></a>
+                        </p>
+                        <p class="pb-2 text-dark text-center ">
+                            <a href="https://w3newbie.com/tutorials/" target="_blank">w3newbie</a>
+                        </p>
+
+                    </div>
+                </div>
+                <!-- link to Js file -->
+
+
+
+                <script src="./js/firebase.js"></script>
+                <script src="DOANTNNGOCTOAN.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+                <!-- //Remember to add this ...database line in your code unless it will not work -->
+
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+                <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+                <!-- lien ket voi functions.js -->
+
+                <script type="module">
+                    // Import the functions you need from the SDKs you need
+
+                    // TODO: Add SDKs for Firebase products that you want to use
+                    // https://firebase.google.com/docs/web/setup#available-libraries
+
+                    // Your web app's Firebase configuration
+                    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyBJ714ZIdowxrA-R7TG7n6yD5nNsY9BUI4",
+                        authDomain: "doantnngoctoan.firebaseapp.com",
+                        databaseURL: "https://doantnngoctoan-default-rtdb.firebaseio.com",
+                        projectId: "doantnngoctoan",
+                        storageBucket: "doantnngoctoan.firebasestorage.app",
+                        messagingSenderId: "828323790307",
+                        appId: "1:828323790307:web:396456db28db87fadc34d6",
+                        measurementId: "G-JLTS95HPTZ"
+                    };
+
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.analytics();
+
+                    // Lấy và hiển thị ngày tháng năm và giờ
+                    function updateTimeAndDate() {
+                        const now = new Date();
+
+                        // Định dạng ngày theo "dd/mm/yyyy"
+                        const day = ("0" + now.getDate()).slice(-2); // Ngày
+                        const month = ("0" + (now.getMonth() + 1)).slice(-2); // Tháng (cộng 1 vì tháng tính từ 0)
+                        const year = now.getFullYear(); // Năm
+
+                        const calendar = `${day}/${month}/${year}`; // Ghép lại thành chuỗi "dd/mm/yyyy"
+
+                        // Định dạng giờ theo "hh:mm:ss"
+                        const hours = ("0" + now.getHours()).slice(-2); // Giờ
+                        const minutes = ("0" + now.getMinutes()).slice(-2); // Phút
+                        const seconds = ("0" + now.getSeconds()).slice(-2); // Giây
+
+                        const time = `${hours}:${minutes}:${seconds}`; // Ghép lại thành chuỗi "hh:mm:ss"
+
+                        // Hiển thị ngày tháng và giờ
+                        document.getElementById("Calendar").innerText = calendar;
+                        document.getElementById("Time").innerText = time;
+
+                        // Cập nhật mỗi giây
+                        setTimeout(updateTimeAndDate, 1000);
+                    }
+
+                    // Gọi hàm khi trang tải xong
+                    window.onload = updateTimeAndDate;
+
+                    var AQI = document.getElementById('AQI');
+                    var dbRef = firebase.database().ref().child('AQI');
+                    dbRef.on('value', snap => AQI.innerText = snap.val() + "");
+
+                    var AQIStatus = document.getElementById('AQIStatus');
+                    var dbRef10 = firebase.database().ref().child('Status AQI');
+
+                    dbRef10.on('value', snap => AQIStatus.innerText = snap.val() + "");
+
+                    var StatusAir = document.getElementById('Status Air');
+                    var dbRef10 = firebase.database().ref().child('Status Air');
+
+                    dbRef10.on('value', snap => StatusAir.innerText = snap.val() + "");
+
+                    var StatusDust = document.getElementById('Status Dust');
+                    var dbRef10 = firebase.database().ref().child('Status Dust');
+
+                    dbRef10.on('value', snap => StatusDust.innerText = snap.val() + "");
+
+
+                    //chart
+                    const timestamps = [];
+                    const temperatures = [];
+                    var temp = document.getElementById('temperature');
+                    var dbRef = firebase.database().ref().child('Temperature');
+                    dbRef.on('value', snap => {
+                        temp.innerText = snap.val() + "℃";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps.push(time);
+                        temperatures.push(data);
+
+
+                        chartData.labels = timestamps;
+                        chartData.datasets[0].data = temperatures;
+                        temperatureChart.update();
+                    });
+
+
+                    //chart
+                    const timestamps1 = [];
+                    const humidity1s = [];
+                    var wet = document.getElementById('humidity');
+                    var dbRef = firebase.database().ref().child('Humidity');
+                    dbRef.on('value', snap => {
+                        wet.innerText = snap.val() + "%";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps1.push(time);
+                        humidity1s.push(data);
+
+
+                        chartData1.labels = timestamps1;
+                        chartData1.datasets[0].data = humidity1s;
+                        humidityChart.update();
+                    });
+
+                    //chart
+                    const timestamps2 = [];
+                    const ugPM25s = [];
+                    var pm25 = document.getElementById('ugPM25');
+                    var dbRef = firebase.database().ref().child('ugPM25');
+                    dbRef.on('value', snap => {
+                        pm25.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps2.push(time);
+                        ugPM25s.push(data);
+
+
+                        chartData2.labels = timestamps2;
+                        chartData2.datasets[0].data = ugPM25s;
+                        ugPM25Chart.update();
+                    });
+
+                    //so2
+                    const timestamps3 = [];
+                    const ugSO2s = [];
+                    var so2 = document.getElementById('ugSO2');
+                    var dbRef = firebase.database().ref().child('ugSO2');
+                    dbRef.on('value', snap => {
+                        so2.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps3.push(time);
+                        ugSO2s.push(data);
+
+
+                        chartData3.labels = timestamps3;
+                        chartData3.datasets[0].data = ugSO2s;
+                        ugSO2Chart.update();
+                    });
+
+                    const timestamps4 = [];
+                    const ugCO2s = [];
+                    var co2 = document.getElementById('ugCO2');
+                    var dbRef = firebase.database().ref().child('ugCO2');
+                    dbRef.on('value', snap => {
+                        co2.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps4.push(time);
+                        ugCO2s.push(data);
+
+
+                        chartData4.labels = timestamps4;
+                        chartData4.datasets[0].data = ugCO2s;
+                        ugCO2Chart.update();
+                    });
+
+                    const timestamps5 = [];
+                    const ugNO2s = [];
+                    var ugNO2 = document.getElementById('ugNO2');
+                    var dbRef = firebase.database().ref().child('ugNO2');
+                    dbRef.on('value', snap => {
+                        ugNO2.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps5.push(time);
+                        ugNO2s.push(data);
+
+
+                        chartData5.labels = timestamps5;
+                        chartData5.datasets[0].data = ugNO2s;
+                        ugNO2Chart.update();
+                    });
+
+
+                    const timestamps6 = [];
+                    const ugO3s = [];
+                    var ugo3 = document.getElementById('ugO3');
+                    var dbRef = firebase.database().ref().child('ugO3');
+                    dbRef.on('value', snap => {
+                        ugo3.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps6.push(time);
+                        ugO3s.push(data);
+
+
+                        chartData6.labels = timestamps6;
+                        chartData6.datasets[0].data = ugO3s;
+                        ugO3Chart.update();
+                    });
+
+                    const timestamps7 = [];
+                    const AQIs = [];
+                    var aqi = document.getElementById('AQI');
+                    var dbRef = firebase.database().ref().child('AQI');
+                    dbRef.on('value', snap => {
+                        aqi.innerText = snap.val() + "";
+                        console.log(snap.val());
+                        const data = snap.val();
+
+                        const now = new Date();
+
+                        const hours = String(now.getHours()).padStart(2, '0');   // Lấy giờ (hh)
+                        const minutes = String(now.getMinutes()).padStart(2, '0'); // Lấy phút (mm)
+                        const seconds = String(now.getSeconds()).padStart(2, '0'); // Lấy giây (ss)
+
+                        const time = `${hours}:${minutes}:${seconds}`
+
+                        timestamps7.push(time);
+                        AQIs.push(data);
+
+
+                        chartData7.labels = timestamps7;
+                        chartData7.datasets[0].data = AQIs;
+                        AQIChart.update();
+                    });
+
+                    var wet = document.getElementById('humidity');
+                    var dbRef2 = firebase.database().ref().child('Humidity');
+                    dbRef2.on('value', snap => wet.innerText = snap.val() + "%");
+
+                    var ugPM25 = document.getElementById('ugPM25');
+                    var dbRef3 = firebase.database().ref().child('ugPM25');
+                    dbRef3.on('value', snap => ugPM25.innerText = snap.val() + " ug/m3");
+
+
+                    // so2
+                    var ugSO2 = document.getElementById('ugSO2');
+                    var dbRef3 = firebase.database().ref().child('ugSO2');
+                    dbRef3.on('value', snap => {
+                        // Lấy giá trị từ Firebase
+                        let value = snap.val();
+
+                        // Kiểm tra nếu giá trị là số và làm tròn đến 2 chữ số thập phân
+                        if (!isNaN(value)) {
+                            value = parseFloat(value).toFixed(2); // Làm tròn 2 chữ số thập phân
+                        }
+
+                        // Hiển thị giá trị lên giao diện
+                        ugSO2.innerText = `${value} ug/m3`;
+                    });
+
+                    // so2
+                    var ugCO2 = document.getElementById('ugCO2');
+                    var dbRef3 = firebase.database().ref().child('ugCO2');
+                    dbRef3.on('value', snap => {
+                        // Lấy giá trị từ Firebase
+                        let value = snap.val();
+
+                        // Kiểm tra nếu giá trị là số và làm tròn đến 2 chữ số thập phân
+                        if (!isNaN(value)) {
+                            value = parseFloat(value).toFixed(2); // Làm tròn 2 chữ số thập phân
+                        }
+
+                        // Hiển thị giá trị lên giao diện
+                        ugCO2.innerText = `${value} ug/m3`;
+                    });
+                    // so2
+                    var ugNO2 = document.getElementById('ugNO2');
+                    var dbRef3 = firebase.database().ref().child('ugNO2');
+                    dbRef3.on('value', snap => {
+                        // Lấy giá trị từ Firebase
+                        let value = snap.val();
+
+                        // Kiểm tra nếu giá trị là số và làm tròn đến 2 chữ số thập phân
+                        if (!isNaN(value)) {
+                            value = parseFloat(value).toFixed(2); // Làm tròn 2 chữ số thập phân
+                        }
+
+                        // Hiển thị giá trị lên giao diện
+                        ugNO2.innerText = `${value} ug/m3`;
+                    });
+                    // so2
+                    var ugO3 = document.getElementById('ugO3');
+                    var dbRef3 = firebase.database().ref().child('ugO3');
+                    dbRef3.on('value', snap => {
+                        // Lấy giá trị từ Firebase
+                        let value = snap.val();
+
+                        // Kiểm tra nếu giá trị là số và làm tròn đến 2 chữ số thập phân
+                        if (!isNaN(value)) {
+                            value = parseFloat(value).toFixed(2); // Làm tròn 2 chữ số thập phân
+                        }
+
+                        // Hiển thị giá trị lên giao diện
+                        ugO3.innerText = `${value} ug/m3`;
+                    });
+
+
+                    //chart
+                    const ctx = document.getElementById('temperatureChart').getContext('2d');
+                    const chartData = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'Nhiệt độ (°C)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const temperatureChart = new Chart(ctx, {
+                        type: 'line',
+                        data: chartData,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+
+                    const ctx1 = document.getElementById('humidityChart').getContext('2d');
+                    const chartData1 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'Độ ẩm (%)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const humidityChart = new Chart(ctx1, {
+                        type: 'line',
+                        data: chartData1,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+
+                    const ctx2 = document.getElementById('ugPM25Chart').getContext('2d');
+                    const chartData2 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'ugPM25(ug/m3)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const ugPM25Chart = new Chart(ctx2, {
+                        type: 'line',
+                        data: chartData2,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+
+                    const ctx3 = document.getElementById('ugSO2Chart').getContext('2d');
+                    const chartData3 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'ugSO2(ug/m3)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const ugSO2Chart = new Chart(ctx3, {
+                        type: 'line',
+                        data: chartData3,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+
+                    const ctx4 = document.getElementById('ugCO2Chart').getContext('2d');
+                    const chartData4 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'ugCO2(ug/m3)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const ugCO2Chart = new Chart(ctx4, {
+                        type: 'line',
+                        data: chartData4,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                    const ctx5 = document.getElementById('ugNO2Chart').getContext('2d');
+                    const chartData5 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'ugNO2(ug/m3)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const ugNO2Chart = new Chart(ctx5, {
+                        type: 'line',
+                        data: chartData5,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                    const ctx6 = document.getElementById('ugO3Chart').getContext('2d');
+                    const chartData6 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'ugO3(ug/m3)',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const ugO3Chart = new Chart(ctx6, {
+                        type: 'line',
+                        data: chartData6,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                    const ctx7 = document.getElementById('AQIChart').getContext('2d');
+                    const chartData7 = {
+                        labels: [], // Trục X: Thời gian
+                        datasets: [{
+                            label: 'AQI',
+                            data: [], // Trục Y: Nhiệt độ
+                            // borderColor: 'rgb(75, 192, 192)',
+                            // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    };
+
+                    const AQIChart = new Chart(ctx7, {
+                        type: 'line',
+                        data: chartData7,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+
+
+                </script>
+</body>
+
+</html>
